@@ -20,9 +20,9 @@ import java.io.FileNotFoundException;
  */
 public class Metodos {
 
-    //Creo un ArrayList de tipo String        
+    //Creo un ArrayList de tipo Producto        
 
-    ArrayList<String> item = new ArrayList<>();
+    ArrayList<Producto> item = new ArrayList<>();
     File f = new File("");
 
     //Añado Items esto habra que meterlo en un bucle para que lo pregunte hasta que se le de a salir 
