@@ -46,5 +46,10 @@ public class Producto {
     public void setPrecio(float precio) {
         this.precio = precio;
     }
+    public void setValores(String nombre,float precio,int cantidad){
+        this.nombre=nombre;
+        this.cantidad=cantidad;
+        this.precio=precio;
+    }
     
 }
