@@ -16,6 +16,8 @@ public class ProyectoProgramacion {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Vender v=new Vender();
+        v.setVisible(true);
     }
     
 }
