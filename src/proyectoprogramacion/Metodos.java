@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,17 +26,19 @@ public class Metodos {
     //Creo un ArrayList de tipo Producto        
 
     ArrayList<Producto> item = new ArrayList<>();
-    File f = new File("");
+    Producto p=new Producto();
 
     //Añado Items esto habra que meterlo en un bucle para que lo pregunte hasta que se le de a salir 
     public void addItem() {
-        item.add(JOptionPane.showInputDialog("Introduce el producto añadido"));
+        p.setValores(JOptionPane.showInputDialog("Introduzca el nombre del producto"), Float.parseFloat(JOptionPane.showInputDialog("Introduzca el precio del producto")),Integer.parseInt("Introduzca la cantidad del producto"));
+        item.add(p);
     }
 
     //Vendemos un producto que tambien tendra que ir en un bucle 
 
     public void delItem() {
-        item.remove(JOptionPane.showInputDialog("Introduce el producto vendido"));
+        item.removeAll(item);
+        
     }
             //Este metodo muestra toda la lista de productos que es lo que se deveria sobrescribir en el fichero cadavez que se termina de 
     //trabajar con el
@@ -43,5 +48,15 @@ public class Metodos {
             System.out.println(item.get(x));
         }
 
+    }
+    public void abrirFichero(){
+        File f = new File("productox.txt");
+        Scanner sc=null;
+        
+        try {
+            sc=new Scanner(f);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
