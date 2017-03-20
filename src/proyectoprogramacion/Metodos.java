@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -81,16 +82,20 @@ public class Metodos {
 
     }
 
-    public void añadir(String nomeFich) {
+    public void añadir(String nomeFich,Producto prod) {
 
-        String dato=item.toString();
+        
         FileWriter fw = null;
         PrintWriter esc = null;
         try {
             fw = new FileWriter(nomeFich, true);
             esc = new PrintWriter(fw);
             esc.append("\n");
+            
+            
+            String dato=item.toString();
             esc.append(dato);
+            
         } catch (IOException ex) {
             System.out.println("error añadir" + ex.getMessage());
         } finally {
