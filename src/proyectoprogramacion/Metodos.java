@@ -82,20 +82,18 @@ public class Metodos {
 
     }
 
-    public void añadir(String nomeFich,Producto prod) {
+    public void añadir(String nomeFich, Producto prod) {
 
-        
         FileWriter fw = null;
         PrintWriter esc = null;
         try {
             fw = new FileWriter(nomeFich, true);
             esc = new PrintWriter(fw);
             esc.append("\n");
-            
-            
-            String dato=item.toString();
-            esc.append(dato);
-            
+
+            Iterator dato = item.iterator();
+            esc.append((CharSequence) dato);
+
         } catch (IOException ex) {
             System.out.println("error añadir" + ex.getMessage());
         } finally {
