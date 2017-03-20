@@ -51,5 +51,8 @@ public class Producto {
         this.cantidad=cantidad;
         this.precio=precio;
     }
-    
+    public String getValores(){
+        String valores=this.nombre+","+this.precio+","+this.cantidad;
+        return valores;
+    }
 }
