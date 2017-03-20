@@ -26,7 +26,7 @@ import java.util.logging.Logger;
  */
 public class Metodos {
 
-    File f = new File("productox.txt");
+    File f = new File("productos.txt");
     Scanner sc = null;
 
     //Creo un ArrayList de tipo Producto        
@@ -64,44 +64,46 @@ public class Metodos {
         }
     }
 
-    public void escribirArchivo(String nomeFich){
+    public void escribirArchivo(String nomeFich) {
         File f = new File(nomeFich);
-        PrintWriter escribir= null;
+        PrintWriter escribir = null;
         try {
             // abrimos ficheiro para escribir
-         escribir= new PrintWriter(f);
-         for(int i =0;i<4;i++)
-             escribir.println(i);           
+            escribir = new PrintWriter(f);
+            for (int i = 0; i < 4; i++) {
+                escribir.println(i);
+            }
         } catch (FileNotFoundException ex) {
-            System.out.println("erro escritura"+ ex.getMessage());
-           }
-        finally{
+            System.out.println("error escritura" + ex.getMessage());
+        } finally {
             escribir.close();
         }
-        
-}
-     public void engadir(String nomeFich, String dato){
-       
-            FileWriter fw = null;
-            PrintWriter esc = null;
-        try{    
-            fw = new FileWriter(nomeFich,true);
+
+    }
+
+    public void añadir(String nomeFich) {
+
+        String dato=item.toString();
+        FileWriter fw = null;
+        PrintWriter esc = null;
+        try {
+            fw = new FileWriter(nomeFich, true);
             esc = new PrintWriter(fw);
             esc.append("\n");
             esc.append(dato);
         } catch (IOException ex) {
-            System.out.println("erro engadir"+ ex.getMessage());
-        }
-        finally{
-                try {
-                    if(fw!=null)
-                        fw.close();
-                    if(esc!= null)
-                       esc.close();
-                } catch (IOException ex) {
-                    System.out.println("erro de peche"+ex.getMessage());
+            System.out.println("error añadir" + ex.getMessage());
+        } finally {
+            try {
+                if (fw != null) {
+                    fw.close();
                 }
-        }            
-} 
+                if (esc != null) {
+                    esc.close();
+                }
+            } catch (IOException ex) {
+                System.out.println("error de cierre" + ex.getMessage());
+            }
+        }
     }
-
+}
